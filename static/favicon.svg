@@ -1,0 +1,15 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Viking shield background -->
+  <rect x="0" y="0" width="32" height="32" fill="#8B4513"/>
+  
+  <!-- Shield shape -->
+  <path d="M4 4 L28 4 L28 24 L16 28 L4 24 Z" fill="#D2691E" stroke="#5D4037" stroke-width="1"/>
+  
+  <!-- Crossed swords -->
+  <line x1="10" y1="10" x2="22" y2="22" stroke="#CD853F" stroke-width="2"/>
+  <line x1="22" y1="10" x2="10" y2="22" stroke="#CD853F" stroke-width="2"/>
+  
+  <!-- Center emblem -->
+  <circle cx="16" cy="16" r="4" fill="#F5E6D3"/>
+  <text x="16" y="19" text-anchor="middle" font-family="serif" font-size="6" font-weight="bold" fill="#8B4513">V</text>
+</svg>

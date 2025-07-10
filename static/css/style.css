@@ -1,0 +1,637 @@
+/* Viking Combat Tracker Styles */
+:root {
+    --viking-primary: #8B4513;
+    --viking-secondary: #D2691E;
+    --viking-accent: #CD853F;
+    --viking-dark: #5D4037;
+    --viking-light: #F5E6D3;
+    --text-dark: #2C1810;
+    --text-light: #FFFFFF;
+    --success: #4CAF50;
+    --warning: #FF9800;
+    --danger: #F44336;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--viking-light) 0%, #E8D5B7 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--viking-primary) 0%, var(--viking-secondary) 100%);
+    color: var(--text-light);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Content */
+.main-content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Character Grid */
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Character Card */
+.character-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px var(--shadow);
+    border: 2px solid var(--viking-accent);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+
+.character-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.character-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.character-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--viking-dark);
+}
+
+.character-status {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-healthy {
+    background: var(--success);
+    color: white;
+}
+
+.status-oskadad {
+    background: var(--success);
+    color: white;
+}
+
+.status-latt-skadad {
+    background: #FFC107;
+    color: black;
+}
+
+.status-skadad {
+    background: var(--warning);
+    color: white;
+}
+
+.status-svart-skadad {
+    background: #FF5722;
+    color: white;
+}
+
+.status-kritiskt-skadad {
+    background: var(--danger);
+    color: white;
+}
+
+.status-i-chock {
+    background: #9C27B0;
+    color: white;
+    animation: pulseShock 1s infinite;
+}
+
+.status-injured {
+    background: var(--warning);
+    color: white;
+}
+
+.status-critical {
+    background: var(--danger);
+    color: white;
+}
+
+.status-unconscious {
+    background: #666;
+    color: white;
+}
+
+/* Health Bar */
+.health-section {
+    margin: 1rem 0;
+}
+
+.health-bar {
+    width: 100%;
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+}
+
+.health-fill {
+    height: 100%;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.health-fill.healthy {
+    background: linear-gradient(90deg, var(--success) 0%, #66BB6A 100%);
+}
+
+.health-fill.injured {
+    background: linear-gradient(90deg, var(--warning) 0%, #FFB74D 100%);
+}
+
+.health-fill.critical {
+    background: linear-gradient(90deg, var(--danger) 0%, #EF5350 100%);
+}
+
+.health-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.armor-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--viking-dark);
+    flex-wrap: wrap;
+}
+
+/* Action Buttons */
+.character-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: center;
+    min-width: fit-content;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--viking-primary) 0%, var(--viking-secondary) 100%);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #545b62;
+    transform: translateY(-1px);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #d32f2f;
+    transform: translateY(-1px);
+}
+
+.btn-success {
+    background: var(--success);
+    color: white;
+}
+
+.btn-success:hover {
+    background: #43a047;
+    transform: translateY(-1px);
+}
+
+.btn-small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    flex: none;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--viking-primary) 0%, var(--viking-secondary) 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.close {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.close:hover {
+    transform: scale(1.1);
+}
+
+/* Forms */
+#character-form,
+#action-form {
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--viking-dark);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--viking-primary);
+    box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.empty-content {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.empty-state h2 {
+    color: var(--viking-dark);
+    margin-bottom: 1rem;
+}
+
+.empty-state p {
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Delete Button */
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--danger);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+}
+
+/* Shock Box Grid - Viking System */
+.shock-section {
+    margin: 1rem 0;
+}
+
+.shock-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2px;
+    margin: 0.5rem 0;
+    max-width: 300px;
+}
+
+.shock-row {
+    display: contents;
+}
+
+.shock-box {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--viking-dark);
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.shock-box.filled {
+    background: var(--danger);
+    color: white;
+}
+
+.shock-box.recent {
+    background: var(--warning);
+    animation: pulseShock 0.5s ease;
+    color: white;
+}
+
+@keyframes pulseShock {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.shock-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.shock-status {
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.shock-status.normal {
+    background: var(--success);
+    color: white;
+}
+
+.shock-status.in-shock {
+    background: var(--danger);
+    color: white;
+}
+
+/* Shock Check Results */
+.shock-checks {
+    margin: 0.5rem 0;
+    font-size: 0.8rem;
+}
+
+.shock-check {
+    display: inline-block;
+    margin: 0.1rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.shock-check.success {
+    background: var(--success);
+    color: white;
+}
+
+.shock-check.failure {
+    background: var(--danger);
+    color: white;
+}
+
+.shock-legend {
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    font-size: 0.8rem;
+    align-items: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.legend-box {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--viking-dark);
+    border-radius: 2px;
+}
+
+.legend-box.filled {
+    background: var(--danger);
+}
+
+/* Row labels */
+.shock-row-label {
+    font-size: 0.7rem;
+    color: var(--viking-dark);
+    font-weight: bold;
+    margin-right: 0.5rem;
+    width: 20px;
+    text-align: center;
+}
+
+.shock-grid-with-labels {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.shock-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 2px;
+}
+
+.shock-labels .shock-row-label {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .character-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .character-actions {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        flex: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0.8rem;
+    }
+    
+    .character-card {
+        padding: 1rem;
+    }
+    
+    .modal-content {
+        margin: 5% auto;
+    }
+    
+    .btn {
+        padding: 0.8rem 1rem;
+    }
+}
