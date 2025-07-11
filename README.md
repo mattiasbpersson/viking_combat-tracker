@@ -2,6 +2,8 @@
 
 En webbapplikation för att hålla koll på karaktärers chockrutor och skada i Viking rollspel.
 
+![alt text](image.png)
+
 ## Funktioner
 
 - ⚔️ Skapa och hantera karaktärer med autentiskt Viking-skadessystem
